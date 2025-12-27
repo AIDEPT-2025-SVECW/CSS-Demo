@@ -10,15 +10,7 @@ div {
   margin: 10px 0;
 }
 
-/* CLASS selector → higher than element */
-.box {
-  background-color: orange;
-}
 
-/* ID selector → higher than class */
-#mainBox {
-  background-color: green;
-}
 
 /* NOTE:
    ID > Class > Element
