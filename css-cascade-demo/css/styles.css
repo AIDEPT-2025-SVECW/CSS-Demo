@@ -1,0 +1,26 @@
+/* ======================================================
+   External CSS File
+   This file represents styles coming from an external source
+   ====================================================== */
+
+/* ELEMENT selector → lowest specificity */
+div {
+  background-color: lightblue;
+  padding: 15px;
+  margin: 10px 0;
+}
+
+/* CLASS selector → higher than element */
+.box {
+  background-color: orange;
+}
+
+/* ID selector → higher than class */
+#mainBox {
+  background-color: green;
+}
+
+/* NOTE:
+   ID > Class > Element
+   But ALL of these can be overridden by inline styles
+*/

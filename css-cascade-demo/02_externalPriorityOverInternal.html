@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>External CSS Priority Over Internal CSS Demo</title>
+
+    <!-- Internal CSS comes AFTER external CSS -->
+    <style>
+      /* Same selector as external */
+      #mainBox {
+        background-color: purple;
+      }
+    </style>
+    <!-- External CSS first -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <h2>2️⃣ Internal CSS Overrides External CSS</h2>
+
+    <div id="mainBox">
+      Background is Green because external CSS is written later
+    </div>
+  </body>
+</html>

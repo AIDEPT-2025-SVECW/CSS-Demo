@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Specificity Demo</title>
+
+    <style>
+      /* Element selector */
+      div {
+        background-color: lightgray;
+      }
+
+      /* Class selector */
+      .box {
+        background-color: orange;
+      }
+
+      /* ID selector */
+      #mainBox {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>5️⃣ Specificity: ID > Class > Element</h2>
+
+    <div id="mainBox" class="box">Green wins → ID selector is strongest</div>
+  </body>
+</html>
