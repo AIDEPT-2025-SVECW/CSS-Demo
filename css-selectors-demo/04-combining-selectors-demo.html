@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Combining Selectors – Precision Targeting (India Context)</title>
+
+    <style>
+      /* ======================================================
+       WHAT ARE COMBINING SELECTORS?
+       ------------------------------------------------------
+       Combining selectors means using MORE THAN ONE selector
+       together to target elements VERY PRECISELY.
+       Example:
+       element.class
+       element#id
+       parent child
+       element[attribute]
+    ====================================================== */
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f7;
+        padding: 20px;
+      }
+
+      h1,
+      h2 {
+        color: red;
+      }
+
+      /* ======================================================
+       1️⃣ ELEMENT + CLASS SELECTOR
+       Targets only <p> elements having class="city"
+    ====================================================== */
+
+      p.city {
+        color: darkgreen;
+        font-weight: bold;
+      }
+
+      /* ======================================================
+       2️⃣ ELEMENT + ID SELECTOR
+       Targets only the element with id="aadhaar"
+    ====================================================== */
+
+      input#aadhaar {
+        border: 2px solid blue;
+        background-color: #eaf2f8;
+      }
+
+      /* ======================================================
+       3️⃣ CLASS + ATTRIBUTE SELECTOR
+       Targets elements having class="gov" AND href ending with .gov.in
+    ====================================================== */
+
+      a.gov[href$=".gov.in"] {
+        color: darkred;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      /* ======================================================
+       4️⃣ DESCENDANT SELECTOR (Parent Child)
+       Targets <li> only INSIDE .temple-list
+    ====================================================== */
+
+      .temple-list li {
+        color: #8e44ad;
+      }
+
+      /* ======================================================
+       5️⃣ DIRECT CHILD SELECTOR (Parent > Child)
+       Targets only DIRECT children
+    ====================================================== */
+
+      .railway > p {
+        background-color: #fdebd0;
+        padding: 5px;
+      }
+
+      /* ======================================================
+       6️⃣ ELEMENT + ATTRIBUTE SELECTOR
+       Targets only input elements with type="tel"
+    ====================================================== */
+
+      input[type="tel"] {
+        border: 2px dashed green;
+      }
+
+      /* ======================================================
+       7️⃣ MULTIPLE COMBINATIONS (Advanced Precision)
+       Form inputs of required fields inside .registration
+    ====================================================== */
+
+      .registration input[required] {
+        background-color: #fff3cd;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>CSS Combining Selectors (Precision Targeting)</h1>
+
+    <h2>1. Element + Class</h2>
+    <p class="city">Hyderabad</p>
+    <p class="city">Bengaluru</p>
+    <p>New Delhi</p>
+    <!-- Only paragraphs with class="city" are styled -->
+
+    <h2>2. Element + ID</h2>
+    <input id="aadhaar" placeholder="Enter Aadhaar Number" />
+    <input id="pan" placeholder="Enter PAN Number" />
+    <!-- Only Aadhaar input gets styled -->
+
+    <h2>3. Class + Attribute</h2>
+    <a class="gov" href="https://www.india.gov.in">India Government Portal</a
+    ><br />
+    <a class="gov" href="https://www.irctc.co.in">IRCTC Website</a>
+    <!-- Only .gov links ending with .gov.in are styled -->
+
+    <h2>4. Descendant Selector</h2>
+    <ul class="temple-list">
+      <li>Tirupati</li>
+      <li>Ayodhya</li>
+    </ul>
+
+    <ul>
+      <li>Not a temple list item</li>
+    </ul>
+    <!-- Only list items inside .temple-list are styled -->
+
+    <h2>5. Direct Child Selector</h2>
+    <div class="railway">
+      <p>Indian Railways Information</p>
+      <div>
+        <p>Nested paragraph (not direct child)</p>
+      </div>
+    </div>
+
+    <h2>6. Element + Attribute</h2>
+    <input type="tel" placeholder="+91-9876543210" />
+    <input type="email" placeholder="email@example.com" />
+
+    <h2>7. Multiple Combined Selectors</h2>
+    <form class="registration">
+      <input type="text" placeholder="Name" required /><br /><br />
+      <input type="email" placeholder="Email" required /><br /><br />
+      <input type="text" placeholder="Optional Referral Code" />
+    </form>
+
+    <h2>Key Learning</h2>
+    <p>
+      Combining selectors helps apply CSS to
+      <strong>exact elements</strong> without affecting others.
+    </p>
+  </body>
+</html>

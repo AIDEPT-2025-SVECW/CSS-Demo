@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Chaining vs Combining Selectors</title>
+
+    <style>
+      /* =========================================================
+       BASIC STYLES (Only for visual clarity)
+       ========================================================= */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f8;
+        padding: 20px;
+      }
+
+      section {
+        background-color: #ffffff;
+        padding: 15px;
+        margin-bottom: 25px;
+        border-radius: 6px;
+      }
+
+      h2 {
+        color: #0b5ed7;
+      }
+
+      p {
+        padding: 6px;
+        margin: 6px 0;
+      }
+
+      /* =========================================================
+       PART 1: CHAINING SELECTORS
+       ========================================================= */
+
+      /*
+      CHAINING SELECTORS:
+      - No space between selectors
+      - Targets elements that satisfy ALL conditions
+      - Think: AND condition
+    */
+
+      /* Only <p> elements that have BOTH class="notice" AND class="important" */
+      p.notice.important {
+        background-color: #fff3cd;
+        border-left: 6px solid #ffc107;
+        font-weight: bold;
+      }
+
+      /* Only <div> elements that have class="office" AND id="aadhaar" */
+      div.office#aadhaar {
+        border: 2px dashed green;
+        padding: 10px;
+      }
+
+      /* =========================================================
+       PART 2: COMBINING SELECTORS
+       ========================================================= */
+
+      /*
+      COMBINING SELECTORS:
+      - Uses SPACE between selectors
+      - Shows parent → child or ancestor → descendant relationship
+      - Think: INSIDE relationship
+    */
+
+      /* Targets <p> inside any element with class="railway" */
+      .railway p {
+        background-color: #e7f1ff;
+        border-left: 6px solid #0d6efd;
+      }
+
+      /* Targets <li> inside <ul> inside .scheme section */
+      .scheme ul li {
+        color: darkgreen;
+        font-weight: 600;
+      }
+
+      /* =========================================================
+       EXTRA: COMPARISON VISUAL
+       ========================================================= */
+
+      .highlight {
+        background-color: #d1e7dd;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>CSS Chaining vs Combining Selectors 🇮🇳</h1>
+
+    <!-- ===================================================== -->
+    <!-- SECTION 1: CHAINING SELECTORS EXAMPLE -->
+    <!-- ===================================================== -->
+    <section>
+      <h2>1️⃣ Chaining Selectors (AND Condition)</h2>
+
+      <!-- This paragraph has BOTH classes, so chaining selector applies -->
+      <p class="notice important">
+        Railway Notice: Platform change for Vande Bharat Express
+      </p>
+
+      <!-- This paragraph has only one class, so chaining selector will NOT apply -->
+      <p class="notice">General Notice: Train arrives 10 minutes early</p>
+
+      <!-- Chaining with element + class + id -->
+      <div class="office" id="aadhaar">
+        Aadhaar Enrollment Office – Government of India
+      </div>
+
+      <!-- This div does not match the chain exactly -->
+      <div class="office">Passport Seva Kendra</div>
+
+      <!--
+      KEY TAKEAWAY:
+      Chaining selector means:
+      element.class1.class2#id
+      → No space
+      → ALL conditions must match
+    --></section>
+
+    <!-- ===================================================== -->
+    <!-- SECTION 2: COMBINING SELECTORS EXAMPLE -->
+    <!-- ===================================================== -->
+    <section>
+      <h2>2️⃣ Combining Selectors (Inside Relationship)</h2>
+
+      <div class="railway">
+        <h3>Indian Railways Announcements</h3>
+
+        <!-- This <p> is INSIDE .railway, so combining selector applies -->
+        <p>Passengers are requested to carry valid ID proof.</p>
+
+        <p>Helpline number: 139</p>
+      </div>
+
+      <!-- This paragraph is outside .railway, so no style applied -->
+      <p>This message is outside Railway section</p>
+
+      <hr />
+
+      <div class="scheme">
+        <h3>Government Schemes</h3>
+
+        <ul>
+          <li>Swachh Bharat Abhiyan</li>
+          <li>Ayushman Bharat</li>
+          <li>Digital India</li>
+        </ul>
+      </div>
+
+      <!--
+      KEY TAKEAWAY:
+      Combining selector means:
+      parent child
+      → Uses SPACE
+      → Child must be INSIDE parent
+    --></section>
+
+    <!-- ===================================================== -->
+    <!-- SECTION 3: QUICK COMPARISON -->
+    <!-- ===================================================== -->
+    <section class="highlight">
+      <h2>🧠 Chaining vs Combining – Easy Memory Trick</h2>
+
+      <p>
+        <strong>Chaining:</strong>
+        "This SAME element must satisfy ALL conditions"
+      </p>
+
+      <p>
+        <strong>Combining:</strong>
+        "This element is INSIDE another element"
+      </p>
+
+      <!-- Student-friendly mnemonic -->
+      <p>
+        🔑 <strong>Memory Tip:</strong><br />
+        No space → Chaining (AND)<br />
+        Space → Combining (INSIDE)
+      </p>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Selectors & Precedence Demo</title>
+
+    <style>
+      /* =====================================================
+       ELEMENT SELECTOR
+       Applies to ALL <div> elements on the page
+       Lowest priority
+       ===================================================== */
+      div {
+        background-color: lightblue;
+        padding: 10px;
+        margin: 10px 0;
+      }
+
+      /* =====================================================
+       CLASS SELECTOR
+       Applies to elements having class="state"
+       Higher priority than element selector
+       ===================================================== */
+      .state {
+        background-color: orange;
+      }
+
+      /* =====================================================
+       ID SELECTOR
+       Applies ONLY to the element with id="ap"
+       Highest priority among these three
+       ===================================================== */
+      #ap {
+        background-color: lightgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>🇮🇳 CSS Selectors Demo</h2>
+    <p>
+      Below examples use Indian states to explain
+      <strong>Element vs Class vs ID</strong> and
+      <strong>which style wins</strong>.
+    </p>
+
+    <!-- =====================================================
+       EXAMPLE 1: Only ELEMENT selector applies
+       ===================================================== -->
+    <div>
+      Kerala (Only &lt;div&gt; element selector applies)
+      <br />
+      ➜ Background: light blue
+    </div>
+
+    <!-- =====================================================
+       EXAMPLE 2: ELEMENT + CLASS selector apply
+       CLASS overrides ELEMENT
+       ===================================================== -->
+    <div class="state">
+      Karnataka (Element + Class)
+      <br />
+      ➜ Class wins → orange
+    </div>
+
+    <!-- =====================================================
+       EXAMPLE 3: ELEMENT + CLASS + ID selectors apply
+       ID overrides CLASS and ELEMENT
+       ===================================================== -->
+    <div class="state" id="ap">
+      AP (Element + Class + ID)
+      <br />
+      ➜ ID wins → light green
+    </div>
+
+    <!-- =====================================================
+       EXAMPLE 4: SAME ELEMENT, SAME CLASS, DIFFERENT ID
+       Shows ID is unique and strongest
+       ===================================================== -->
+    <div class="state" id="tamilnadu">
+      Tamil Nadu (Element + Class only)
+      <br />
+      ➜ No ID rule → class wins → orange
+    </div>
+
+    <!-- =====================================================
+       SUMMARY SECTION
+       ===================================================== -->
+    <hr />
+
+    <h3>🧠 Easy Rule to Remember</h3>
+    <ul>
+      <li><strong>Element selector</strong> → Applies to all (weakest)</li>
+      <li><strong>Class selector</strong> → Applies to group (stronger)</li>
+      <li><strong>ID selector</strong> → Applies to one (strongest)</li>
+    </ul>
+
+    <p>👉 When multiple styles apply to the same element:</p>
+
+    <p style="font-weight: bold">ID &gt; Class &gt; Element</p>
+
+    <p style="color: red">
+      🧠 More specific selector always wins over a less specific one.
+    </p>
+  </body>
+</html>

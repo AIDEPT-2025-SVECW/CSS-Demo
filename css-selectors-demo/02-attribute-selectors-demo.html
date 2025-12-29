@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Attribute Selectors</title>
+
+    <style>
+      /* -----------------------------
+       BASIC STYLING (for visibility)
+    ------------------------------ */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #2c3e50;
+      }
+
+      .box {
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        background-color: white;
+      }
+
+      /* ======================================================
+       1️⃣ [attribute] — Attribute exists
+       Selects elements that HAVE the given attribute
+    ====================================================== */
+      /* Any input that has a "required" attribute */
+      input[required] {
+        border: 2px solid red;
+      }
+
+      /* ======================================================
+       2️⃣ [attribute="value"] — Exact match
+       Attribute value must be EXACTLY the same
+    ====================================================== */
+      /* Only Aadhaar input (exact match) */
+      input[type="aadhaar"] {
+        background-color: #e8f8f5;
+      }
+
+      /* ======================================================
+       3️⃣ [attribute~="value"] — Word contains
+       Value must be a SPACE separated word
+    ====================================================== */
+      /* Cities that include "metro" as one of the words */
+      div[data-city~="metro"] {
+        background-color: #fef9e7;
+        border-left: 5px solid orange;
+      }
+
+      /* ======================================================
+       4️⃣ [attribute|="value"] — Exact or value-
+       Commonly used for language codes
+    ====================================================== */
+      /* Language is "hi" or starts with "hi-" */
+      p[lang|="hi"] {
+        background-color: #eaf2f8;
+        font-weight: bold;
+      }
+
+      /* ======================================================
+       5️⃣ [attribute^="value"] — Starts with
+    ====================================================== */
+      /* Phone numbers starting with +91 (India country code) */
+      input[value^="+91"] {
+        border: 2px solid green;
+      }
+
+      /* ======================================================
+       6️⃣ [attribute$="value"] — Ends with
+    ====================================================== */
+      /* Government websites ending with .gov.in */
+      a[href$=".gov.in"] {
+        color: darkgreen;
+        font-weight: bold;
+      }
+
+      /* ======================================================
+       7️⃣ [attribute*="value"] — Contains substring
+    ====================================================== */
+      /* Any link that contains "irctc" anywhere */
+      a[href*="irctc"] {
+        background-color: #fdebd0;
+        padding: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>CSS Attribute Selectors (Indian Examples)</h1>
+
+    <!-- 1️⃣ Attribute exists -->
+    <h2>1. [attribute] — Attribute exists</h2>
+    <input type="text" placeholder="Name (required)" required />
+    <!-- This input has "required", so red border applies -->
+
+    <input type="text" placeholder="Optional Field" />
+    <!-- No required attribute, so no red border -->
+
+    <!-- 2️⃣ Exact match -->
+    <h2>2. [attribute="value"] — Exact match</h2>
+    <input type="aadhaar" placeholder="Aadhaar Number" />
+    <!-- Matches input[type="aadhaar"] -->
+
+    <input type="pan" placeholder="PAN Number" />
+    <!-- Does NOT match -->
+
+    <!-- 3️⃣ Word contains -->
+    <h2>3. [attribute~="value"] — Word contains</h2>
+    <div class="box" data-city="metro south">Chennai – Metro City</div>
+
+    <div class="box" data-city="capital">Amaravati – Capital City</div>
+
+    <!-- 4️⃣ Exact or prefix -->
+    <h2>4. [attribute|="value"] — Exact or value-</h2>
+    <p lang="hi">नमस्ते भारत</p>
+    <!-- Matches lang="hi" -->
+
+    <p lang="hi-IN">हिंदी भाषा</p>
+    <!-- Matches hi-IN -->
+
+    <p lang="en">Hello India</p>
+    <!-- Does NOT match -->
+
+    <!-- 5️⃣ Starts with -->
+    <h2>5. [attribute^="value"] — Starts with</h2>
+    <input value="+91-9876543210" />
+    <!-- Indian mobile number -->
+
+    <input value="+91-555-1234" />
+    <!-- US number, not matched -->
+
+    <!-- 6️⃣ Ends with -->
+    <h2>6. [attribute$="value"] — Ends with</h2>
+    <a href="https://www.india.gov.in">India Government Portal</a><br />
+    <a href="https://www.irctc.co.in">IRCTC Website</a>
+
+    <!-- 7️⃣ Contains -->
+    <h2>7. [attribute*="value"] — Contains substring</h2>
+    <a href="https://www.irctc.co.in/nget/train-search"> Book Train Tickets </a>
+  </body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pseudo-class vs Pseudo-element</title>
+
+    <style>
+      /* =========================================================
+       BASIC PAGE STYLING (for better visibility only)
+       ========================================================= */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f7fa;
+        padding: 20px;
+      }
+
+      section {
+        background-color: #ffffff;
+        padding: 16px;
+        margin-bottom: 25px;
+        border-radius: 6px;
+      }
+
+      h2 {
+        color: #0d6efd;
+      }
+
+      p,
+      li {
+        padding: 6px;
+      }
+
+      /* =========================================================
+       PART 1: PSEUDO-CLASSES
+       ========================================================= */
+
+      /*
+      PSEUDO-CLASSES:
+      - Describe the STATE of an element
+      - Uses SINGLE colon (:)
+      - Examples: :hover, :focus, :active, :visited
+    */
+
+      /* When user hovers over a railway link */
+      a:hover {
+        color: darkred;
+        font-weight: bold;
+      }
+
+      /* When input field is clicked or active */
+      input:focus {
+        border: 2px solid green;
+        outline: none;
+        background-color: #e9ffe9;
+      }
+
+      /* Style the first item in a list */
+      li:first-child {
+        color: darkgreen;
+        font-weight: bold;
+      }
+
+      /* =========================================================
+       PART 2: PSEUDO-ELEMENTS
+       ========================================================= */
+
+      /*
+      PSEUDO-ELEMENTS:
+      - Style a PART of an element
+      - Uses DOUBLE colon (::)
+      - Examples: ::before, ::after, ::first-letter, ::first-line
+    */
+
+      .scheme-info {
+        color: purple;
+      }
+
+      /* Style the first letter of a paragraph */
+      .scheme-info::first-letter {
+        font-size: 28px;
+        color: #ff5722;
+        font-weight: bold;
+      }
+
+      /* Add content BEFORE an element */
+      .aadhaar::before {
+        content: "🇮🇳 ";
+      }
+
+      /* Add content AFTER an element */
+      .aadhaar::after {
+        content: " ✔ Verified";
+        color: green;
+        font-weight: bold;
+      }
+
+      /* Style the first line of a paragraph */
+      .railway-note::first-line {
+        color: #0b5ed7;
+        font-weight: bold;
+      }
+
+      /* =========================================================
+       COMPARISON VISUAL HELP
+       ========================================================= */
+      .highlight {
+        background-color: #eef4ff;
+        padding: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Pseudo-class vs Pseudo-element 🇮🇳</h1>
+
+    <!-- ===================================================== -->
+    <!-- SECTION 1: PSEUDO-CLASS EXAMPLES -->
+    <!-- ===================================================== -->
+    <section>
+      <h2>1️⃣ Pseudo-classes (Element State)</h2>
+
+      <!-- Hover example -->
+      <p>
+        <a href="#">Indian Railways Booking Portal</a>
+      </p>
+
+      <!-- Focus example -->
+      <label>
+        Aadhaar Number:
+        <input type="text" placeholder="Enter 12-digit Aadhaar" />
+      </label>
+
+      <!-- first-child example -->
+      <h3>Government Helpline Numbers</h3>
+      <ul>
+        <li>112 – Emergency</li>
+        <li>139 – Railway Enquiry</li>
+        <li>108 – Ambulance</li>
+      </ul>
+
+      <!--
+      KEY LEARNING:
+      Pseudo-class reacts to USER ACTION or POSITION
+      Examples:
+      :hover → mouse over
+      :focus → clicked/active
+      :first-child → position-based
+    --></section>
+
+    <!-- ===================================================== -->
+    <!-- SECTION 2: PSEUDO-ELEMENT EXAMPLES -->
+    <!-- ===================================================== -->
+    <section>
+      <h2>2️⃣ Pseudo-elements (Part of an Element)</h2>
+
+      <!-- ::first-letter -->
+      <p class="scheme-info">
+        Swachh Bharat Abhiyan aims to make India clean and open defecation free.
+      </p>
+
+      <!-- ::before and ::after -->
+      <p class="aadhaar">Aadhaar Card Holder</p>
+
+      <!-- ::first-line -->
+      <p class="railway-note">
+        Passengers are requested to arrive 30 minutes early.<br />
+        Late arrival may result in missed boarding.
+      </p>
+
+      <!--
+      KEY LEARNING:
+      Pseudo-element styles a PART of content
+      Examples:
+      ::first-letter → first letter only
+      ::before → content before element
+      ::after → content after element
+    --></section>
+
+    <!-- ===================================================== -->
+    <!-- SECTION 3: QUICK COMPARISON -->
+    <!-- ===================================================== -->
+    <section class="highlight">
+      <h2>🧠 Easy Comparison for Exams</h2>
+
+      <p>
+        <strong>Pseudo-class:</strong><br />
+        Changes style based on STATE of element<br />
+        Uses → <code>:</code>
+      </p>
+
+      <p>
+        <strong>Pseudo-element:</strong><br />
+        Styles PART of an element<br />
+        Uses → <code>::</code>
+      </p>
+
+      <p>
+        🔑 <strong>Memory Trick:</strong><br />
+        One colon → State<br />
+        Two colons → Piece
+      </p>
+    </section>
+  </body>
+</html>

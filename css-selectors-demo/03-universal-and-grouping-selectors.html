@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Universal & Grouping Selectors</title>
+
+    <style>
+      /* =====================================================
+       1️⃣ UNIVERSAL SELECTOR (*)
+       -----------------------------------------------------
+       * selects ALL elements on the page
+       Used for:
+       - Resetting default browser styles
+       - Applying common font or box sizing
+    ====================================================== */
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; /* Prevents width overflow */
+        font-family: Arial, sans-serif;
+      }
+
+      /* =====================================================
+       2️⃣ GROUPING SELECTOR
+       -----------------------------------------------------
+       Multiple selectors separated by comma (,)
+       Used to avoid repeating same CSS (DRY principle)
+    ====================================================== */
+
+      /* Headings related to Indian content */
+      h1,
+      h2,
+      h3 {
+        color: #2c3e50;
+        margin-bottom: 10px;
+      }
+
+      /* Grouping common text elements */
+      p,
+      li,
+      span {
+        color: #333;
+        font-size: 16px;
+      }
+
+      /* Grouping containers */
+      .card,
+      .notice,
+      .info {
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        padding: 12px;
+        margin-bottom: 15px;
+      }
+
+      /* Extra styles to see difference */
+      body {
+        background-color: #eef2f3;
+        padding: 20px;
+      }
+
+      ul {
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>CSS Selectors Demo</h1>
+
+    <!-- UNIVERSAL SELECTOR DEMO -->
+    <h2>1. Universal Selector (*)</h2>
+    <p>
+      Because of the <strong>* selector</strong>, every element on this page:
+    </p>
+
+    <ul>
+      <li>Has zero margin</li>
+      <li>Has zero padding</li>
+      <li>Uses the same font</li>
+    </ul>
+
+    <!-- GROUPING SELECTOR DEMO -->
+    <h2>2. Grouping Selector (,)</h2>
+
+    <div class="card">
+      <h3>Indian Railways</h3>
+      <p>
+        Indian Railways is one of the largest railway networks in the world.
+      </p>
+    </div>
+
+    <div class="notice">
+      <h3>Aadhaar Card</h3>
+      <p>
+        Aadhaar is a 12-digit unique identity number issued to Indian residents.
+      </p>
+    </div>
+
+    <div class="info">
+      <h3>Tirupati Temple</h3>
+      <p>Tirupati is one of the most visited religious places in India.</p>
+      <span>Located in Andhra Pradesh</span>
+    </div>
+
+    <!-- Explanation section -->
+    <h2>Key Takeaways</h2>
+    <p>Universal selector applies to <strong>everything</strong>.</p>
+    <p>
+      Grouping selector helps write <strong>less CSS</strong> by sharing styles.
+    </p>
+  </body>
+</html>
