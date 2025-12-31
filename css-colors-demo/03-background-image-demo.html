@@ -114,6 +114,18 @@
         padding: 20px;
         border-radius: 8px;
       }
+
+      .scroll-bg {
+        background-image: url("https://images.unsplash.com/photo-1513346940221-6f673d962e97");
+
+        /* Default behavior:
+     Image scrolls along with the page/content */
+        background-attachment: scroll;
+
+        /* Same properties to keep comparison fair */
+        background-size: cover;
+        background-position: center;
+      }
     </style>
   </head>
 
@@ -164,6 +176,18 @@
         <div class="overlay">
           Scroll the page to see <br />
           background-attachment: fixed
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= Scrollable BACKGROUND ================= -->
+    <div class="section">
+      <h2>4️⃣ Scrollable Background (Festival Lights)</h2>
+
+      <div class="box scroll-bg">
+        <div class="overlay">
+          Scroll the page to see <br />
+          background-attachment: scroll
         </div>
       </div>
     </div>
