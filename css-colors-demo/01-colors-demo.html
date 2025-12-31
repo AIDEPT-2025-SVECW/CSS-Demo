@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Colors Demo - RGB, HEX & HSL</title>
+
+    <style>
+      /* ===== GENERAL PAGE STYLES ===== */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        margin: 20px;
+        line-height: 1.6;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      h2 {
+        margin-top: 40px;
+        color: #222;
+      }
+
+      .section {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .box {
+        padding: 20px;
+        margin-top: 10px;
+        color: white;
+        font-weight: bold;
+        border-radius: 6px;
+      }
+
+      /* ===== RGB EXAMPLES ===== */
+
+      /* RGB uses numbers from 0 to 255
+       rgb(red, green, blue)
+       0   = no color
+       255 = full color */
+
+      .rgb-saffron {
+        /* Indian flag saffron color */
+        background-color: rgb(255, 153, 51);
+      }
+
+      .rgb-white {
+        /* White is all colors at maximum */
+        background-color: rgb(255, 255, 255);
+        color: black; /* text changed so it is visible */
+        border: 1px solid #ccc;
+      }
+
+      .rgb-green {
+        /* Indian flag green color */
+        background-color: rgb(19, 136, 8);
+      }
+
+      /* ===== HEX EXAMPLES ===== */
+
+      /* HEX format: #RRGGBB
+       RR = Red
+       GG = Green
+       BB = Blue
+       Values range from 00 to FF */
+
+      .hex-red {
+        /* Traffic signal RED */
+        background-color: #ff0000;
+      }
+
+      .hex-yellow {
+        /* Festival lights yellow */
+        background-color: #ffcc00;
+        color: black;
+      }
+
+      .hex-blue {
+        /* Ashoka Chakra blue */
+        background-color: #000080;
+      }
+
+      /* ===== HSL EXAMPLES ===== */
+
+      /* HSL format:
+       hsl(hue, saturation, lightness)
+
+       Hue        → color wheel (0° to 360°)
+       Saturation → color strength (0% to 100%)
+       Lightness  → brightness (0% to 100%)
+    */
+
+      .hsl-rangoli-pink {
+        /* Pink Rangoli color */
+        background-color: hsl(330, 80%, 55%);
+      }
+
+      .hsl-leaf-green {
+        /* Fresh leaf green */
+        background-color: hsl(120, 60%, 40%);
+      }
+
+      .hsl-sky-blue {
+        /* Indian clear sky blue */
+        background-color: hsl(210, 70%, 50%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>🎨 CSS Color Codes Demo (RGB, HEX & HSL)</h1>
+
+    <!-- ================= RGB SECTION ================= -->
+    <div class="section">
+      <h2>1️⃣ RGB Color Model (Red, Green, Blue)</h2>
+
+      <!-- Explanation inside HTML so students can read -->
+      <p>
+        RGB works like mixing lights. Each color value ranges from
+        <strong>0 to 255</strong>. More value means more brightness of that
+        color.
+      </p>
+
+      <div class="box rgb-saffron">rgb(255, 153, 51) → Indian Flag Saffron</div>
+
+      <div class="box rgb-white">
+        rgb(255, 255, 255) → White (All colors fully ON)
+      </div>
+
+      <div class="box rgb-green">rgb(19, 136, 8) → Indian Flag Green</div>
+    </div>
+
+    <!-- ================= HEX SECTION ================= -->
+    <div class="section">
+      <h2>2️⃣ HEX Color Codes (#RRGGBB)</h2>
+
+      <p>
+        HEX is just another way to represent RGB using hexadecimal numbers. It
+        is commonly used in real-world projects and design tools.
+      </p>
+
+      <div class="box hex-red">#FF0000 → Traffic Signal Red</div>
+
+      <div class="box hex-yellow">#FFCC00 → Festival Light Yellow</div>
+
+      <div class="box hex-blue">#000080 → Ashoka Chakra Blue</div>
+    </div>
+
+    <!-- ================= HSL SECTION ================= -->
+    <div class="section">
+      <h2>3️⃣ HSL Color Model (Hue, Saturation, Lightness)</h2>
+
+      <p>
+        HSL is easier for humans to understand because it follows a
+        <strong>color wheel concept</strong>.
+      </p>
+
+      <ul>
+        <li>
+          <strong>Hue</strong>: Color type (0° = Red, 120° = Green, 240° = Blue)
+        </li>
+        <li><strong>Saturation</strong>: Color strength</li>
+        <li><strong>Lightness</strong>: Brightness</li>
+      </ul>
+
+      <div class="box hsl-rangoli-pink">hsl(330, 80%, 55%) → Rangoli Pink</div>
+
+      <div class="box hsl-leaf-green">hsl(120, 60%, 40%) → Leaf Green</div>
+
+      <div class="box hsl-sky-blue">hsl(210, 70%, 50%) → Sky Blue</div>
+    </div>
+
+    <!-- ================= QUICK SUMMARY ================= -->
+    <div class="section">
+      <h2>📝 Quick Summary for Students</h2>
+      <ul>
+        <li><strong>RGB</strong> → Best when thinking in numbers (0–255)</li>
+        <li><strong>HEX</strong> → Compact & widely used in projects</li>
+        <li>
+          <strong>HSL</strong> → Best for adjusting brightness & shades easily
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

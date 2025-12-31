@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Background Image Demo</title>
+
+    <style>
+      /* =====================================================
+       BACKGROUND IMAGE BASICS
+       -----------------------------------------------------
+       background-image     → sets an image behind content
+       background-repeat    → repeat / no-repeat
+       background-size      → cover / contain
+       background-position  → center, top, bottom, etc.
+       background-attachment→ scroll / fixed
+    ====================================================== */
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f3f3f3;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .section {
+        background: white;
+        padding: 20px;
+        margin-bottom: 30px;
+        border-radius: 8px;
+      }
+
+      .box {
+        height: 220px;
+        margin-top: 15px;
+        padding: 15px;
+        color: white;
+        font-weight: bold;
+        border-radius: 8px;
+      }
+
+      /* =====================================================
+       1️⃣ BASIC BACKGROUND IMAGE
+    ====================================================== */
+      .temple-bg {
+        /* Temple image as background */
+        background-image: url("https://www.google.com/logos/doodles/2025/new-years-eve-2025-6753651837110713.2-la1f1f1f.gif");
+
+        /* By default, image repeats */
+        background-repeat: no-repeat;
+
+        /* Resize image to cover entire div */
+        background-size: cover;
+
+        /* Center the image */
+        background-position: center;
+      }
+
+      /* =====================================================
+       2️⃣ BACKGROUND REPEAT (RANGOLI PATTERN)
+    ====================================================== */
+      .rangoli-bg {
+        /* Small rangoli pattern image */
+        background-image: url("https://images.unsplash.com/photo-1600334129128-685c5582fd35");
+
+        /* Repeat image like floor rangoli design */
+        background-repeat: repeat;
+
+        /* Original size is used */
+        background-size: auto;
+        color: black;
+      }
+
+      /* =====================================================
+       3️⃣ CONTAIN vs COVER (VILLAGE ROAD)
+    ====================================================== */
+      .contain-bg {
+        background-image: url("https://images.unsplash.com/photo-1716797701746-23806b92bf14?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        background-repeat: no-repeat;
+
+        /* contain → full image visible, empty space may appear */
+        background-size: contain;
+        background-position: center;
+        color: black;
+      }
+
+      .cover-bg {
+        background-image: url("https://images.unsplash.com/photo-1526731530795-375e081e6154?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        background-repeat: no-repeat;
+
+        /* cover → fills entire area, image may crop */
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* =====================================================
+       4️⃣ BACKGROUND ATTACHMENT (FESTIVAL LIGHTS EFFECT)
+    ====================================================== */
+      .fixed-bg {
+        background-image: url("https://images.unsplash.com/photo-1508480706764-bc67252f66c2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+
+        /* Image stays fixed while page scrolls */
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* Overlay for readability */
+      .overlay {
+        background-color: rgba(0, 0, 0, 0.5);
+        height: 100%;
+        padding: 20px;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>🖼️ CSS Background Images – Indian Context</h1>
+
+    <!-- ================= BASIC IMAGE ================= -->
+    <div class="section">
+      <h2>1️⃣ Basic Background Image (Temple)</h2>
+
+      <!-- Students learn how image is placed behind content -->
+      <div class="box temple-bg">
+        Google 2026 Doodle as Background <br />
+        background-size: cover <br />
+        background-position: center
+      </div>
+    </div>
+
+    <!-- ================= REPEAT ================= -->
+    <div class="section">
+      <h2>2️⃣ Background Repeat (Rangoli Pattern)</h2>
+
+      <div class="box rangoli-bg">
+        Rangoli pattern repeated like floor decoration <br />
+        background-repeat: repeat
+      </div>
+    </div>
+
+    <!-- ================= CONTAIN VS COVER ================= -->
+    <div class="section">
+      <h2>3️⃣ Contain vs Cover (Village Road)</h2>
+
+      <p>
+        <strong>contain</strong> shows the full image but may leave empty space.
+        <strong>cover</strong> fills the area but may crop image.
+      </p>
+
+      <div class="box contain-bg">background-size: contain</div>
+
+      <div class="box cover-bg">background-size: cover</div>
+    </div>
+
+    <!-- ================= FIXED BACKGROUND ================= -->
+    <div class="section">
+      <h2>4️⃣ Fixed Background (Festival Lights)</h2>
+
+      <div class="box fixed-bg">
+        <div class="overlay">
+          Scroll the page to see <br />
+          background-attachment: fixed
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= SUMMARY ================= -->
+    <div class="section">
+      <h2>📝 Quick Student Summary</h2>
+      <ul>
+        <li><strong>background-image</strong> → puts image behind content</li>
+        <li><strong>cover</strong> → fills area (best for banners)</li>
+        <li><strong>contain</strong> → shows full image</li>
+        <li><strong>repeat</strong> → tile pattern</li>
+        <li><strong>fixed</strong> → parallax effect</li>
+      </ul>
+    </div>
+  </body>
+</html>
