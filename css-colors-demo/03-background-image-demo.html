@@ -63,7 +63,7 @@
     ====================================================== */
       .rangoli-bg {
         /* Small rangoli pattern image */
-        background-image: url("https://images.unsplash.com/photo-1600334129128-685c5582fd35");
+        background-image: url("https://images.unsplash.com/photo-1716714620140-9ed26b67e900");
 
         /* Repeat image like floor rangoli design */
         background-repeat: repeat;
@@ -125,6 +125,52 @@
         /* Same properties to keep comparison fair */
         background-size: cover;
         background-position: center;
+      }
+
+      /* =====================================================
+   5️⃣ LINEAR GRADIENT (INDIAN FLAG)
+   -----------------------------------------------------
+   linear-gradient(direction, color1, color2, color3)
+   Direction can be: to right, to bottom, 45deg, etc.
+====================================================== */
+      .linear-gradient-flag {
+        background: linear-gradient(
+          to bottom,
+          #ff9933,
+          /* Saffron */ #ffffff,
+          /* White */ #138808 /* Green */
+        );
+
+        /* Text visibility */
+        color: black;
+      }
+
+      /* =====================================================
+   6️⃣ RADIAL GRADIENT – CIRCLE (DIYA GLOW)
+   -----------------------------------------------------
+   radial-gradient(shape, start-color, end-color)
+====================================================== */
+      .radial-circle {
+        background: radial-gradient(
+          circle,
+          #ffd700,
+          /* Diya flame center */ #ff8c00,
+          #8b0000 /* Dark outer edge */
+        );
+      }
+
+      /* =====================================================
+   7️⃣ RADIAL GRADIENT – ELLIPSE (SUNRISE EFFECT)
+   -----------------------------------------------------
+   ellipse spreads wider horizontally than vertically
+====================================================== */
+      .radial-ellipse {
+        background: radial-gradient(
+          ellipse at center,
+          #fffacd,
+          /* Morning light */ #ffa500,
+          #ff4500
+        );
       }
     </style>
   </head>
@@ -190,6 +236,47 @@
           background-attachment: scroll
         </div>
       </div>
+    </div>
+
+    <div class="section">
+      <h2>5️⃣ Linear Gradient Background (Indian Flag)</h2>
+
+      <div class="box linear-gradient-flag">
+        Linear Gradient Example <br />
+        background: linear-gradient(to bottom, saffron, white, green)
+      </div>
+
+      <p>
+        <strong>Real-world use:</strong> Website banners, festival headers,
+        Independence Day themes.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>6️⃣ Radial Gradient – Circle (Diya Glow)</h2>
+
+      <div class="box radial-circle">
+        Radial Gradient (Circle) <br />
+        Light spreads equally in all directions
+      </div>
+
+      <p>
+        <strong>Real-world use:</strong> Glow effects, buttons, festive cards.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>7️⃣ Radial Gradient – Ellipse (Sunrise Effect)</h2>
+
+      <div class="box radial-ellipse">
+        Radial Gradient (Ellipse) <br />
+        Wider spread – like sunrise on horizon
+      </div>
+
+      <p>
+        <strong>Real-world use:</strong> Hero sections, spotlight effects, stage
+        lighting.
+      </p>
     </div>
 
     <!-- ================= SUMMARY ================= -->
