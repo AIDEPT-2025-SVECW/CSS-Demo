@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS box-sizing – Box Model Demo (Indian Context)</title>
+
+    <style>
+      /* ==========================================
+       GLOBAL STYLES
+       ========================================== */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      /* Section container */
+      .section {
+        background-color: #ffffff;
+        padding: 15px;
+        margin-bottom: 25px;
+        border-radius: 8px;
+      }
+
+      /* ==========================================
+       COMMON BOX STYLES
+       ------------------------------------------
+       width: 300px is SAME for all boxes
+       padding & border are also SAME
+       Only box-sizing changes
+       ========================================== */
+      .box {
+        width: 300px; /* Fixed width for comparison */
+        padding: 20px;
+        border: 5px solid #1976d2;
+        margin-bottom: 20px;
+        background-color: #e3f2fd;
+        font-weight: bold;
+      }
+
+      /* ==========================================
+       box-sizing VALUES
+       ========================================== */
+
+      /* DEFAULT behavior in CSS */
+      .content-box {
+        box-sizing: content-box;
+        /* width applies ONLY to content */
+        /* padding + border are ADDED outside */
+      }
+
+      /* Most commonly used in modern websites */
+      .border-box {
+        box-sizing: border-box;
+        /* width includes content + padding + border */
+        /* box never grows beyond given width */
+      }
+
+      /* Rarely used, but good for theory */
+      .inherit-box {
+        box-sizing: inherit;
+        /* Takes box-sizing from parent */
+      }
+
+      /* Parent to demonstrate inherit */
+      .parent {
+        box-sizing: border-box;
+        padding: 10px;
+        border: 2px dashed #444;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>📦 CSS box-sizing – Understanding Box Model Size</h1>
+
+    <!-- ================= INTRO ================= -->
+    <div class="section">
+      <p>
+        Imagine a <strong>sweet box 🍬</strong> with a fixed size. The question
+        is:
+        <br />
+        <strong
+          >Should padding and border be included inside the box size or added
+          outside?</strong
+        >
+      </p>
+    </div>
+
+    <!-- ================= CONTENT-BOX ================= -->
+    <div class="section">
+      <h2>1️⃣ box-sizing: content-box (Default)</h2>
+
+      <div class="box content-box">
+        Content Box <br /><br />
+        Width = 300px (content only) <br />
+        Padding + Border are added outside
+      </div>
+
+      <p>
+        🧠 <strong>Layman Meaning:</strong><br />
+        The sweet box size increases when we add padding and border.
+      </p>
+
+      <p>
+        🏠 <strong>Real-life Example:</strong><br />
+        Laddu size is fixed, but wrapper and box add extra size.
+      </p>
+    </div>
+
+    <!-- ================= BORDER-BOX ================= -->
+    <div class="section">
+      <h2>2️⃣ box-sizing: border-box (Recommended)</h2>
+
+      <div class="box border-box">
+        Border Box <br /><br />
+        Width = 300px (content + padding + border)
+      </div>
+
+      <p>
+        🧠 <strong>Layman Meaning:</strong><br />
+        Box size stays fixed no matter how much padding or border you add.
+      </p>
+
+      <p>
+        🏠 <strong>Real-life Example:</strong><br />
+        Sweet box has fixed outer size; laddu adjusts inside.
+      </p>
+    </div>
+
+    <!-- ================= INHERIT ================= -->
+    <div class="section">
+      <h2>3️⃣ box-sizing: inherit</h2>
+
+      <div class="parent">
+        Parent (box-sizing: border-box)
+
+        <div class="box inherit-box">
+          Child Box <br /><br />
+          Inherits box-sizing from parent
+        </div>
+      </div>
+
+      <p>
+        🧠 <strong>Layman Meaning:</strong><br />
+        Child box follows parent's rule.
+      </p>
+    </div>
+
+    <!-- ================= SUMMARY ================= -->
+    <div class="section">
+      <h2>🧠 Easy Exam Memory</h2>
+
+      <table border="1" cellpadding="8" cellspacing="0" width="100%">
+        <tr style="background-color: #f0f0f0">
+          <th>Value</th>
+          <th>What width includes</th>
+          <th>Easy Memory</th>
+        </tr>
+        <tr>
+          <td>content-box</td>
+          <td>Content only</td>
+          <td>Box grows bigger</td>
+        </tr>
+        <tr>
+          <td>border-box</td>
+          <td>Content + Padding + Border</td>
+          <td>Box stays fixed</td>
+        </tr>
+        <tr>
+          <td>inherit</td>
+          <td>Same as parent</td>
+          <td>Follow parent</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

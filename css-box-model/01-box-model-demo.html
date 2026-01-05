@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Box Model - Indian Context</title>
+    <style>
+      /* Global styling for the entire page */
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
+        /* Tricolor gradient inspired by Indian flag */
+        padding: 20px;
+        margin: 0;
+      }
+
+      /* Container for the main content */
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Main heading style */
+      h1 {
+        text-align: center;
+        color: #ff6600;
+        margin-bottom: 10px;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #666;
+        margin-bottom: 30px;
+      }
+
+      /* 
+        BOX MODEL DEMONSTRATION 
+        Every HTML element is a box with 4 components:
+        1. Content - The actual text/image inside
+        2. Padding - Space between content and border
+        3. Border - Line around the padding
+        4. Margin - Space outside the border (between elements)
+        */
+
+      /* Example 1: Chai Card */
+      .chai-card {
+        /* CONTENT: The actual area where text appears */
+        width: 300px;
+
+        /* PADDING: Space inside the box, between content and border */
+        /* This creates breathing room for the text */
+        padding: 20px;
+        /* You can also specify individual sides:
+               padding-top: 20px;
+               padding-right: 20px;
+               padding-bottom: 20px;
+               padding-left: 20px;
+            */
+
+        /* BORDER: The visible line around the element */
+        border: 4px solid #ff6600;
+        /* border has 3 parts: width, style, color */
+        border-radius: 8px; /* Rounded corners */
+
+        /* MARGIN: Space outside the border */
+        /* This creates distance from other elements */
+        margin: 20px auto;
+        /* margin: 20px auto means:
+               - 20px top and bottom margin
+               - auto left and right (centers the element)
+            */
+
+        background-color: #fff8dc;
+        text-align: center;
+      }
+
+      /* Example 2: Biryani Card */
+      .biryani-card {
+        width: 300px;
+
+        /* Different padding on different sides */
+        padding-top: 25px;
+        padding-right: 30px;
+        padding-bottom: 25px;
+        padding-left: 30px;
+
+        /* Dashed border style */
+        border: 3px dashed #8b4513;
+        border-radius: 12px;
+
+        /* Individual margin values */
+        margin-top: 30px;
+        margin-bottom: 30px;
+        margin-left: auto;
+        margin-right: auto;
+
+        background-color: #fffacd;
+        text-align: center;
+      }
+
+      /* Example 3: Cricket Card */
+      .cricket-card {
+        width: 300px;
+
+        /* Shorthand: padding: top right bottom left (clockwise) */
+        padding: 15px 25px 15px 25px;
+
+        /* Double border style */
+        border: 5px double #0066cc;
+        border-radius: 10px;
+
+        /* Shorthand: margin: top right bottom left */
+        margin: 25px auto 25px auto;
+
+        background-color: #e6f3ff;
+        text-align: center;
+      }
+
+      /* Visual explanation section */
+      .explanation {
+        background-color: #f0f0f0;
+        padding: 20px;
+        margin: 30px 0;
+        border-left: 5px solid #ff6600;
+        border-radius: 5px;
+      }
+
+      /* Interactive hover effect to show the box model */
+      .hover-demo {
+        width: 250px;
+        padding: 15px;
+        border: 3px solid #138808;
+        margin: 20px auto;
+        background-color: #ffffff;
+        text-align: center;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      /* When you hover, the box expands showing padding and margin changes */
+      .hover-demo:hover {
+        padding: 25px; /* Increased padding */
+        margin: 30px auto; /* Increased margin */
+        border-color: #ff6600;
+        background-color: #fff8dc;
+        transform: scale(1.05);
+      }
+
+      /* Labels for the box model parts */
+      .label {
+        font-weight: bold;
+        color: #ff6600;
+        margin-top: 15px;
+      }
+
+      /* Code display styling */
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-family: "Courier New", monospace;
+        color: #d63384;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🇮🇳 CSS Box Model Tutorial</h1>
+      <p class="subtitle">Learn with Indian Examples!</p>
+
+      <!-- Explanation Section -->
+      <div class="explanation">
+        <h2>📦 What is the Box Model?</h2>
+        <p>
+          In CSS, every element is treated as a box. Just like a
+          <strong>tiffin box</strong> has:
+        </p>
+        <ul>
+          <li>
+            <code>Content</code> - The food (actual content like text/images)
+          </li>
+          <li>
+            <code>Padding</code> - Space inside the container around the food
+          </li>
+          <li><code>Border</code> - The tiffin box walls</li>
+          <li>
+            <code>Margin</code> - Space between your tiffin and others in the
+            bag
+          </li>
+        </ul>
+      </div>
+
+      <!-- Example 1: Chai Card -->
+      <div class="chai-card">
+        <h2>☕ Chai</h2>
+        <p>India's favorite beverage!</p>
+        <p class="label">This box has:</p>
+        <p>
+          📏 Padding: 20px all around<br />
+          🔲 Border: 4px solid orange<br />
+          📐 Margin: 20px top/bottom, centered
+        </p>
+      </div>
+
+      <!-- Example 2: Biryani Card -->
+      <div class="biryani-card">
+        <h2>🍛 Biryani</h2>
+        <p>The royal rice dish of India!</p>
+        <p class="label">This box has:</p>
+        <p>
+          📏 Padding: 25px top/bottom, 30px left/right<br />
+          🔲 Border: 3px dashed brown<br />
+          📐 Margin: 30px top/bottom, centered
+        </p>
+      </div>
+
+      <!-- Example 3: Cricket Card -->
+      <div class="cricket-card">
+        <h2>🏏 Cricket</h2>
+        <p>India's passion!</p>
+        <p class="label">This box has:</p>
+        <p>
+          📏 Padding: 15px top/bottom, 25px left/right<br />
+          🔲 Border: 5px double blue<br />
+          📐 Margin: 25px all around, centered
+        </p>
+      </div>
+
+      <!-- Interactive Demo -->
+      <div class="explanation">
+        <h2>🎯 Interactive Demo</h2>
+        <p>
+          Hover over the box below to see padding and margin change in
+          real-time!
+        </p>
+      </div>
+
+      <div class="hover-demo">
+        <strong>🪔 Diwali Diya</strong>
+        <p>Hover over me!</p>
+      </div>
+    </div>
+  </body>
+</html>
