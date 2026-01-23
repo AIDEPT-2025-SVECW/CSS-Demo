@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Display Property</title>
+
+    <style>
+      /* =====================================================
+       BASIC PAGE STYLES
+       ===================================================== */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f6fa;
+        padding: 20px;
+      }
+
+      h1,
+      h2 {
+        color: #2c3e50;
+      }
+
+      /* A common container for each example */
+      .section {
+        border: 2px dashed #7f8c8d;
+        background-color: #ffffff;
+        padding: 15px;
+        margin-bottom: 30px;
+      }
+
+      /* Common style for demo boxes */
+      .box {
+        background-color: #ffeaa7;
+        border: 3px solid #d35400;
+        padding: 10px;
+        margin: 5px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      /* =====================================================
+       DISPLAY: BLOCK
+       ===================================================== */
+      .block {
+        display: block;
+        /* Block elements always start on a new line */
+      }
+
+      /* =====================================================
+       DISPLAY: INLINE
+       ===================================================== */
+      .inline {
+        display: inline;
+        /* Inline elements stay in the same line like text */
+      }
+
+      /* =====================================================
+       DISPLAY: INLINE-BLOCK
+       ===================================================== */
+      .inline-block {
+        display: inline-block;
+        width: 150px;
+        /* Inline-block stays in same line AND accepts width/height */
+      }
+
+      /* =====================================================
+       DISPLAY: NONE
+       ===================================================== */
+      .hidden {
+        display: none;
+        /* Element is completely removed from the page */
+      }
+
+      /* =====================================================
+       DISPLAY: FLEX
+       ===================================================== */
+      .flex-container {
+        display: flex;
+        gap: 10px;
+        /* Flex arranges items neatly in a row */
+      }
+
+      /* =====================================================
+       DISPLAY: GRID
+       ===================================================== */
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        /* Grid creates rows and columns like a chess board */
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>CSS Display Property Explained 🇮🇳</h1>
+
+    <p>
+      The <strong>display</strong> property controls
+      <em>how an element appears and behaves on a web page</em>. Think of it as
+      how things are arranged in real life.
+    </p>
+
+    <!-- =====================================================
+       DISPLAY: BLOCK
+       ===================================================== -->
+    <div class="section">
+      <h2>1️⃣ display: block (Like Shops on a Street)</h2>
+
+      <p>
+        🏬 Each shop occupies the full width of the street. No shop can stand
+        beside another.
+      </p>
+
+      <div class="box block">🏪 Kirana Shop</div>
+      <div class="box block">🧺 Vegetable Shop</div>
+      <div class="box block">🥛 Milk Booth</div>
+
+      <!-- Each div starts on a new line because it is block -->
+    </div>
+
+    <!-- =====================================================
+       DISPLAY: INLINE
+       ===================================================== -->
+    <div class="section">
+      <h2>2️⃣ display: inline (Like Words in a Sentence)</h2>
+
+      <p>📜 Inline elements behave like text in a sentence.</p>
+
+      <span class="box inline">Ram</span>
+      <span class="box inline">went</span>
+      <span class="box inline">to</span>
+      <span class="box inline">temple</span>
+
+      <!-- Inline elements do not start new lines -->
+    </div>
+
+    <!-- =====================================================
+       DISPLAY: INLINE-BLOCK
+       ===================================================== -->
+    <div class="section">
+      <h2>3️⃣ display: inline-block (Like Chairs in a Row)</h2>
+
+      <p>🪑 Chairs are placed side by side, but each chair has its own size.</p>
+
+      <div class="box inline-block">🪑 Chair 1</div>
+      <div class="box inline-block">🪑 Chair 2</div>
+      <div class="box inline-block">🪑 Chair 3</div>
+
+      <!-- Inline-block allows width & height while staying inline -->
+    </div>
+
+    <!-- =====================================================
+       DISPLAY: NONE
+       ===================================================== -->
+    <div class="section">
+      <h2>4️⃣ display: none (Like Removing a Shop)</h2>
+
+      <p>❌ The shop is removed completely. No space is left.</p>
+
+      <div class="box">🏪 Open Shop</div>
+      <div class="box hidden">🚧 Closed Shop</div>
+      <div class="box">🏪 Another Shop</div>
+
+      <!-- The middle shop is not visible at all -->
+    </div>
+
+    <!-- =====================================================
+       DISPLAY: FLEX
+       ===================================================== -->
+    <div class="section">
+      <h2>5️⃣ display: flex (Like Items on a Shop Shelf)</h2>
+
+      <p>🛒 Items are neatly arranged in one row.</p>
+
+      <div class="flex-container">
+        <div class="box">🍪 Biscuits</div>
+        <div class="box">🥤 Juice</div>
+        <div class="box">🍫 Chocolate</div>
+      </div>
+
+      <!-- Flex makes alignment easy and responsive -->
+    </div>
+
+    <!-- =====================================================
+       DISPLAY: GRID
+       ===================================================== -->
+    <div class="section">
+      <h2>6️⃣ display: grid (Like Apartment Layout)</h2>
+
+      <p>🏢 Grid divides space into rows and columns.</p>
+
+      <div class="grid-container">
+        <div class="box">🏠 House 1</div>
+        <div class="box">🏠 House 2</div>
+        <div class="box">🏠 House 3</div>
+        <div class="box">🏠 House 4</div>
+        <div class="box">🏠 House 5</div>
+        <div class="box">🏠 House 6</div>
+      </div>
+
+      <!-- Grid is best for complex page layouts -->
+    </div>
+
+    <!-- =====================================================
+       SUMMARY
+       ===================================================== -->
+    <h2>🧠 Easy Exam Summary</h2>
+
+    <div class="section">
+      <ul>
+        <li><strong>block</strong> → Full width, new line</li>
+        <li><strong>inline</strong> → Same line, no width control</li>
+        <li><strong>inline-block</strong> → Same line + width control</li>
+        <li><strong>none</strong> → Completely removed</li>
+        <li><strong>flex</strong> → One-direction layout</li>
+        <li><strong>grid</strong> → Row & column layout</li>
+      </ul>
+    </div>
+
+    <p>
+      <strong>Exam one-liner:</strong><br />
+      The CSS display property defines how an element is displayed and how it
+      participates in the page layout.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Position Explained for Students</title>
+
+    <style>
+      /* 
+        GENERAL PAGE STYLING
+        ---------------------
+        Just to make things clean and readable
+        */
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h2 {
+        margin-top: 80px;
+      }
+
+      .container {
+        border: 2px dashed #999;
+        padding: 20px;
+        margin-bottom: 80px;
+        position: relative;
+        /* 
+            This container is IMPORTANT:
+            Absolute elements will listen to THIS box
+            */
+      }
+
+      .box {
+        width: 180px;
+        height: 80px;
+        padding: 10px;
+        color: white;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      /* ------------------------------------
+           1. STATIC (DEFAULT POSITION)
+           ------------------------------------ */
+      .static-box {
+        background-color: gray;
+        position: static;
+        /*
+            STATIC:
+            - Default position
+            - Element sits where it normally should
+            - top/left/right/bottom WILL NOT WORK
+            */
+      }
+
+      /* ------------------------------------
+           2. RELATIVE
+           ------------------------------------ */
+      .relative-box {
+        background-color: green;
+        position: relative;
+        top: 20px;
+        left: 20px;
+        /*
+            RELATIVE:
+            - Moves relative to ITS ORIGINAL position
+            - Original space is STILL reserved
+            - Other elements are NOT affected
+            */
+      }
+
+      /* ------------------------------------
+           3. ABSOLUTE
+           ------------------------------------ */
+      .absolute-box {
+        background-color: red;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        /*
+            ABSOLUTE:
+            - Removed from normal flow
+            - Positioned relative to nearest positioned parent
+            - Does NOT keep its space
+            */
+      }
+
+      /* ------------------------------------
+           4. FIXED
+           ------------------------------------ */
+      .fixed-box {
+        background-color: blue;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 200px;
+        /*
+            FIXED:
+            - Fixed to the SCREEN (viewport)
+            - Does NOT move when page scrolls
+            - Commonly used for chat buttons, navbars
+            */
+      }
+
+      /* ------------------------------------
+           5. STICKY
+           ------------------------------------ */
+      .sticky-box {
+        background-color: purple;
+        position: sticky;
+        top: 0;
+        /*
+            STICKY:
+            - Acts like RELATIVE initially
+            - Becomes FIXED when scroll reaches top
+            - Needs a top value to stick
+            */
+      }
+
+      .spacer {
+        height: 600px;
+        /*
+            This creates scrolling
+            so students can SEE fixed & sticky behavior
+            */
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>CSS Position – Student Friendly Demo</h1>
+    <p>
+      Scroll slowly and read comments in the code. Each colored box represents
+      one CSS position type.
+    </p>
+
+    <!-- ============================= -->
+    <!-- STATIC -->
+    <!-- ============================= -->
+    <h2>1️⃣ position: static (Default)</h2>
+    <div class="container">
+      <div class="box static-box">
+        STATIC BOX<br />
+        "I sit normally"
+      </div>
+      <p>
+        Static elements follow normal HTML flow. They ignore top, left, right,
+        bottom.
+      </p>
+    </div>
+
+    <!-- ============================= -->
+    <!-- RELATIVE -->
+    <!-- ============================= -->
+    <h2>2️⃣ position: relative</h2>
+    <div class="container">
+      <div class="box relative-box">
+        RELATIVE BOX<br />
+        "I move from my seat"
+      </div>
+      <p>Notice: Space is still reserved, but the box has shifted slightly.</p>
+    </div>
+
+    <!-- ============================= -->
+    <!-- ABSOLUTE -->
+    <!-- ============================= -->
+    <h2>3️⃣ position: absolute</h2>
+    <div class="container">
+      <div class="box absolute-box">
+        ABSOLUTE BOX<br />
+        "I sit anywhere"
+      </div>
+      <p>
+        This box is positioned relative to the container. It does NOT reserve
+        space.
+      </p>
+    </div>
+
+    <!-- ============================= -->
+    <!-- STICKY -->
+    <!-- ============================= -->
+    <h2>4️⃣ position: sticky</h2>
+    <div class="container">
+      <div class="box sticky-box">
+        STICKY BOX<br />
+        "Scroll me"
+      </div>
+      <p>Scroll down. This box will stick to the top when it reaches it.</p>
+      <div class="spacer"></div>
+    </div>
+
+    <!-- ============================= -->
+    <!-- FIXED -->
+    <!-- ============================= -->
+    <div class="box fixed-box">
+      FIXED BOX<br />
+      "I stay on screen"
+    </div>
+
+    <div class="spacer"></div>
+
+    <p>🎉 End of demo! Try changing values in CSS and observe behavior.</p>
+  </body>
+</html>
